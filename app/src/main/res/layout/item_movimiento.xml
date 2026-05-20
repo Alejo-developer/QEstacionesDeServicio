@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tipo movimiento -->
+        <TextView
+            android:id="@+id/textoTipoMovimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Volumen + combustible -->
+        <TextView
+            android:id="@+id/textoVolumenMov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/texto_primario"
+            android:layout_marginTop="4dp" />
+
+        <!-- Saldos -->
+        <TextView
+            android:id="@+id/textoSaldos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/primario"
+            android:textStyle="italic"
+            android:layout_marginTop="4dp" />
+
+        <!-- Motivo -->
+        <TextView
+            android:id="@+id/textoMotivoMov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/texto_secundario"
+            android:layout_marginTop="4dp" />
+
+        <!-- Fila inferior: Fecha + Auditable -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textoFechaMov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="@color/texto_secundario" />
+
+            <TextView
+                android:id="@+id/textoAuditable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔍 Auditable"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/informacion"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

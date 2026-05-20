@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/secundario_oscuro"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌐 Boletines Normativos"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_sobre_primario" />
+
+        <TextView
+            android:id="@+id/textoEstadoServidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/texto_sobre_primario"
+            android:alpha="0.85"
+            android:layout_marginTop="4dp"
+            android:text="Servidor nacional: jsonplaceholder.typicode.com" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/textoResumenBoletines"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/texto_secundario"
+            android:text="Sin datos. Toca Refrescar para cargar." />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonRefrescarBoletines"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="🔄  Refrescar"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            app:cornerRadius="8dp"
+            app:backgroundTint="@color/informacion" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/cargandoBoletines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textoSinBoletines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No hay boletines aún."
+        android:textSize="13sp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:textColor="@color/texto_secundario"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaBoletines"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Publicar boletín (POST)"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto_primario"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Título del boletín"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoTituloBoletin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contenido"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoContenidoBoletin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="2"
+                    android:maxLines="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonPublicarBoletin"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="📡  Publicar boletín"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/exito" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonVolverBoletines"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/volver"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_margin="12dp" />
+</LinearLayout>

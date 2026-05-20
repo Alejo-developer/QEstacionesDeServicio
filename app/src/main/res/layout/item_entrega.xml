@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Estación destino -->
+        <TextView
+            android:id="@+id/textoEstacionEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_primario" />
+
+        <!-- Vehículo + Placa -->
+        <TextView
+            android:id="@+id/textoVehiculoEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/texto_secundario"
+            android:layout_marginTop="4dp" />
+
+        <!-- Volumen + Combustible -->
+        <TextView
+            android:id="@+id/textoVolumenEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/secundario"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+        <!-- Observaciones (opcional) -->
+        <TextView
+            android:id="@+id/textoObservacionesEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/texto_secundario"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:visibility="gone" />
+
+        <!-- Fecha -->
+        <TextView
+            android:id="@+id/textoFechaEntrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/texto_secundario"
+            android:layout_marginTop="8dp"
+            android:textAlignment="textEnd" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

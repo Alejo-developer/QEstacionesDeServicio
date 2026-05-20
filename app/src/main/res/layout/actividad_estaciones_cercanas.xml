@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/secundario_oscuro"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🗺️ Estaciones cercanas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_sobre_primario" />
+
+        <TextView
+            android:id="@+id/textoUbicacionCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/texto_sobre_primario"
+            android:alpha="0.85"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estaciones registradas"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/texto_primario"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/textoSinEstacionesCercanas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aún no hay estaciones con ubicación registrada."
+        android:textSize="13sp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:textColor="@color/texto_secundario"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaEstacionesCercanas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonVolverEstacionesCercanas"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/volver"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_margin="16dp" />
+</LinearLayout>

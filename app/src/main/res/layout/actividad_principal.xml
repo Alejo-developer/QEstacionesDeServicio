@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo">
+
+    <!-- Barra superior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/primario"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/textoBienvenida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_sobre_primario" />
+
+        <TextView
+            android:id="@+id/textoRol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/texto_sobre_primario"
+            android:alpha="0.8"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Contenido del menú con scroll -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_principal"
+                style="@style/TituloSeccion"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Botón: Configurar Precios (solo Admin) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonConfigPrecios"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="📊  Configurar Precios ACPM"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/primario"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- Botón: Historial Normativo (solo Admin) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonHistorial"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="📜  Historial Normativo"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/primario"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- Botón: Configurar Zonas Reguladas (solo Admin) — HU-06 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonConfigZonas"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="🗺  Configurar Zonas Reguladas"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/primario_claro"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- Botón: Validar Subsidio (Admin, Operador) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonValidarSubsidio"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="🔍  Validar Subsidio"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/secundario"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- Botón: Registrar Entregas (Distribuidor) — HU-09 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonRegistrarEntregas"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="🚛  Registrar Entregas"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/secundario"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- Botón: Control de Inventarios (Estación) — HU-13 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonControlInventario"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="📦  Control de Inventarios"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/primario_oscuro"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón Cerrar Sesión -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/opcion_cerrar_sesion"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="@color/error"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_margin="24dp" />
+
+</LinearLayout>

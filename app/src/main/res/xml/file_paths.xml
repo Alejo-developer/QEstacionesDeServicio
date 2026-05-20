@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- HU-11: Rutas para compartir reportes PDF y CSV generados -->
+    <external-files-path
+        name="reportes"
+        path="Reportes/" />
+</paths>

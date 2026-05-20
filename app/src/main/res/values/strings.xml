@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nombre_app">Q-Estaciones de Servicio</string>
+
+    <!-- HU-01: Autenticación -->
+    <string name="titulo_inicio_sesion">Inicio de Sesión</string>
+    <string name="campo_usuario">Nombre de usuario</string>
+    <string name="campo_contrasena">Contraseña</string>
+    <string name="boton_ingresar">Ingresar</string>
+    <string name="enlace_registrarse">¿No tienes cuenta? Regístrate</string>
+    <string name="titulo_registro">Registro de Usuario</string>
+    <string name="campo_nombre_completo">Nombre completo</string>
+    <string name="campo_confirmar_contrasena">Confirmar contraseña</string>
+    <string name="seleccionar_rol">Seleccionar rol</string>
+    <string name="boton_registrar">Registrar</string>
+    <string name="error_credenciales">Credenciales incorrectas</string>
+    <string name="error_cuenta_bloqueada">Cuenta bloqueada por intentos fallidos</string>
+    <string name="error_campos_vacios">Complete todos los campos</string>
+    <string name="error_contrasenas_no_coinciden">Las contraseñas no coinciden</string>
+    <string name="error_usuario_existe">El usuario ya existe</string>
+    <string name="exito_registro">Usuario registrado exitosamente</string>
+    <string name="intentos_restantes">Intentos restantes: %d</string>
+
+    <!-- Pantalla Principal -->
+    <string name="titulo_principal">Menú Principal</string>
+    <string name="bienvenida">Bienvenido, %s</string>
+    <string name="rol_actual">Rol: %s</string>
+    <string name="opcion_configurar_precios">Configurar Precios ACPM</string>
+    <string name="opcion_historial_normativo">Historial Normativo</string>
+    <string name="opcion_validar_subsidio">Validar Subsidio</string>
+    <string name="opcion_cerrar_sesion">Cerrar Sesión</string>
+
+    <!-- HU-03: Precios -->
+    <string name="titulo_configuracion_precios">Configuración de Precios ACPM</string>
+    <string name="campo_zona">Zona</string>
+    <string name="campo_tipo_vehiculo">Tipo de vehículo</string>
+    <string name="campo_precio_base">Precio base (COP)</string>
+    <string name="campo_precio_subsidiado">Precio subsidiado (COP)</string>
+    <string name="campo_decreto">Decreto / Norma</string>
+    <string name="boton_guardar_regla">Guardar Regla</string>
+    <string name="titulo_reglas_activas">Reglas de Precios Activas</string>
+    <string name="titulo_historial_normativo">Historial Normativo</string>
+    <string name="aviso_exclusion_publico">⚠ El servicio público está excluido automáticamente del subsidio</string>
+    <string name="exito_regla_guardada">Regla de precios guardada</string>
+    <string name="error_precio_invalido">Ingrese un precio válido</string>
+    <string name="titulo_nueva_regla">Nueva Regla de Precios</string>
+
+    <!-- HU-05: Subsidios -->
+    <string name="titulo_validacion_subsidio">Validación de Subsidio</string>
+    <string name="campo_placa">Placa del vehículo</string>
+    <string name="boton_validar">Validar Subsidio</string>
+    <string name="resultado_aplica">✅ SUBSIDIO APLICA</string>
+    <string name="resultado_no_aplica">❌ SUBSIDIO NO APLICA</string>
+    <string name="titulo_historial_validaciones">Historial de Validaciones</string>
+    <string name="error_placa_vacia">Ingrese una placa</string>
+    <string name="precio_aplicado">Precio aplicado: $%s COP</string>
+    <string name="motivo_rechazo">Motivo: %s</string>
+
+    <!-- HU-06: Zonas Reguladas -->
+    <string name="titulo_configuracion_zonas">Configuración de Zonas Reguladas</string>
+    <string name="subtitulo_zonas">Defina zonas por municipio con versionamiento</string>
+    <string name="campo_municipio">Municipio</string>
+    <string name="campo_departamento">Departamento</string>
+    <string name="campo_codigo_zona">Código de zona</string>
+    <string name="boton_guardar_zona">Guardar Zona</string>
+    <string name="titulo_zonas_registradas">Zonas Registradas</string>
+    <string name="exito_zona_guardada">Zona guardada exitosamente</string>
+    <string name="opcion_configurar_zonas">Configurar Zonas Reguladas</string>
+
+    <!-- HU-09: Registro de Entregas -->
+    <string name="titulo_registro_entrega">Registro de Entregas</string>
+    <string name="subtitulo_entregas">Registre entregas de combustible con trazabilidad</string>
+    <string name="campo_estacion_destino">Estación destino</string>
+    <string name="campo_vehiculo_transporte">Vehículo de transporte</string>
+    <string name="campo_placa_entrega">Placa del vehículo</string>
+    <string name="campo_volumen">Volumen (litros)</string>
+    <string name="campo_tipo_combustible">Tipo de combustible</string>
+    <string name="campo_observaciones">Observaciones</string>
+    <string name="boton_registrar_entrega">Registrar Entrega</string>
+    <string name="titulo_historial_entregas">Historial de Entregas</string>
+    <string name="exito_entrega_registrada">Entrega registrada exitosamente</string>
+    <string name="opcion_registrar_entregas">Registrar Entregas</string>
+    <string name="error_volumen_invalido">Ingrese un volumen válido</string>
+
+    <!-- HU-13: Control de Inventarios -->
+    <string name="titulo_control_inventario">Control de Inventarios</string>
+    <string name="campo_tipo_movimiento">Tipo de movimiento</string>
+    <string name="campo_volumen_litros">Volumen (litros)</string>
+    <string name="campo_motivo">Motivo</string>
+    <string name="boton_registrar_movimiento">Registrar Movimiento</string>
+    <string name="titulo_historial_movimientos">Historial de Movimientos</string>
+    <string name="saldo_inicial">⛽ Saldo actual: 0 litros</string>
+    <string name="opcion_control_inventario">Control de Inventarios</string>
+    <string name="movimiento_entrada">Entrada</string>
+    <string name="movimiento_salida">Salida</string>
+    <string name="movimiento_ajuste">Ajuste</string>
+
+    <!-- Roles -->
+    <string name="rol_administrador">Administrador</string>
+    <string name="rol_operador">Operador</string>
+    <string name="rol_distribuidor">Distribuidor</string>
+    <string name="rol_estacion">Estación</string>
+
+    <!-- Tipos de vehículo -->
+    <string name="tipo_particular">Particular</string>
+    <string name="tipo_carga">Carga</string>
+    <string name="tipo_servicio_publico">Servicio Público</string>
+    <string name="tipo_motocicleta">Motocicleta</string>
+
+    <!-- HU-11: Reportes Regulatorios -->
+    <string name="titulo_reportes">Reportes Regulatorios</string>
+    <string name="subtitulo_reportes">Genere reportes oficiales en PDF o CSV (Excel)</string>
+    <string name="reporte_pdf_titulo">Reporte PDF</string>
+    <string name="reporte_pdf_desc">Genera un documento PDF con inventario, precios normativos y validaciones de subsidio.</string>
+    <string name="reporte_csv_titulo">Reporte CSV / Excel</string>
+    <string name="reporte_csv_desc">Genera un archivo CSV compatible con Excel con todos los datos del sistema.</string>
+    <string name="boton_generar_pdf">Generar PDF</string>
+    <string name="boton_generar_csv">Generar CSV (Excel)</string>
+    <string name="opcion_reportes">Reportes Regulatorios</string>
+
+    <!-- HU-07: Alertas Normativas -->
+    <string name="titulo_alertas_normativas">Alertas Normativas</string>
+    <string name="subtitulo_alertas_normativas">Historial de cambios de precios ACPM notificados</string>
+    <string name="opcion_alertas_normativas">Alertas Normativas</string>
+
+    <!-- HU-12: Reporte por Decreto -->
+    <string name="reporte_decreto_titulo">Reporte por Decreto</string>
+    <string name="reporte_decreto_desc">Filtra y exporta en CSV las reglas de precios asociadas a un decreto específico.</string>
+    <string name="campo_filtro_decreto">Número o nombre del decreto</string>
+    <string name="boton_reporte_decreto">Generar Reporte por Decreto</string>
+
+    <!-- HU-14: Filtros de Historial de Entregas -->
+    <string name="titulo_filtros_entrega">Filtrar Historial</string>
+    <string name="filtro_estacion">Estación (nombre parcial)</string>
+    <string name="filtro_combustible">Combustible</string>
+    <string name="desde">Desde</string>
+    <string name="hasta">Hasta</string>
+    <string name="aplicar_filtro">Aplicar Filtro</string>
+    <string name="limpiar_filtro">Limpiar</string>
+
+    <!-- HU-08: Inventario en Tiempo Real -->
+    <string name="titulo_inventario_tiempo_real">Inventario en Tiempo Real</string>
+    <string name="subtitulo_inventario_tiempo_real">Registro de entradas y salidas de combustible</string>
+    <string name="label_recibido">Recibido</string>
+    <string name="label_vendido">Vendido</string>
+    <string name="label_saldo">Saldo</string>
+    <string name="campo_observacion">Observación (opcional)</string>
+    <string name="opcion_inventario_tiempo_real">Inventario en Tiempo Real</string>
+
+    <!-- HU-10: Trazabilidad de Operaciones -->
+    <string name="titulo_trazabilidad">Trazabilidad de Operaciones</string>
+    <string name="filtro_desde">Desde (dd/MM/yyyy)</string>
+    <string name="filtro_hasta">Hasta (dd/MM/yyyy)</string>
+    <string name="filtro_usuario_traz">Filtrar por usuario</string>
+    <string name="filtro_modulo_traz">Filtrar por módulo</string>
+    <string name="boton_aplicar_filtros">Aplicar Filtros</string>
+    <string name="boton_limpiar_filtros">Limpiar</string>
+    <string name="boton_exportar_csv">Exportar CSV</string>
+    <string name="opcion_trazabilidad">Trazabilidad de Operaciones</string>
+
+    <!-- Precio de referencia y margen de estación -->
+    <string name="titulo_precio_referencia">Precio de Referencia Nacional</string>
+    <string name="titulo_margen_estacion">Mi Precio de Venta</string>
+    <string name="opcion_precio_referencia">💲  Precio de Referencia</string>
+    <string name="opcion_margen_estacion">💲  Configurar Precio de Venta</string>
+
+    <!-- Venta con subsidio y factura -->
+    <string name="titulo_venta">Registrar Venta</string>
+    <string name="opcion_registrar_venta">🛒  Registrar Venta</string>
+
+    <!-- Inventario distribuidor -->
+    <string name="titulo_inventario_distribuidor">Inventario Distribuidor</string>
+    <string name="opcion_inventario_distribuidor">🚛  Mi Inventario y Despachos</string>
+
+    <!-- General -->
+    <string name="sin_registros">No hay registros</string>
+    <string name="fecha_formato">dd/MM/yyyy HH:mm</string>
+    <string name="volver">Volver</string>
+    <string name="simbolo_volver">←</string>
+</resources>

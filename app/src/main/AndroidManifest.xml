@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- HU-13: Notificaciones de stock bajo (requerido en Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Lab Maps Intent: ubicación geográfica para estaciones y origen de ruta del distribuidor -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--
+        Android 11+ (package visibility) — sin este bloque, resolveActivity()
+        devuelve null para Google Maps aunque esté instalado, porque la app no
+        tiene permiso para "ver" otros paquetes. Declaramos:
+         - Google Maps app explícitamente (com.google.android.apps.maps).
+         - Cualquier app que entienda el esquema geo: (otras apps de mapas).
+         - Cualquier app que abra URLs https (navegadores como fallback).
+    -->
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/nombre_app"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QEstaciones">
+
+        <!-- HU-01: Autenticación -->
+        <activity
+            android:name=".hu01_autenticacion.InicioSesionActividad"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".hu01_autenticacion.RegistroUsuarioActividad"
+            android:exported="false" />
+
+        <activity android:name=".hu01_autenticacion.ListaUsuariosActividad"
+            android:exported="false" />
+
+        <activity android:name=".hu01_autenticacion.AuditoriaActividad"
+            android:exported="false" />
+
+        <!-- HU-04 & HU-15: Consulta Pública -->
+        <activity android:name=".hu04_consulta.ConsultaPreciosActividad"
+            android:exported="false" />
+
+        <!-- Pantalla Principal -->
+        <activity android:name=".PrincipalActividad"
+            android:exported="false" />
+
+        <!-- HU-03: Configuración de Precios -->
+        <activity android:name=".hu03_precios.ConfiguracionPreciosActividad"
+            android:exported="false" />
+
+        <activity android:name=".hu03_precios.HistorialNormativoActividad"
+            android:exported="false" />
+
+        <!-- HU-05: Validación de Subsidios -->
+        <activity android:name=".hu05_subsidios.ValidacionSubsidioActividad"
+            android:exported="false" />
+
+        <!-- HU-06: Configuración de Zonas Reguladas -->
+        <activity android:name=".hu06_zonas.ConfiguracionZonasActividad"
+            android:exported="false" />
+
+        <!-- HU-09: Registro de Entregas -->
+        <activity android:name=".hu09_entregas.RegistroEntregaActividad"
+            android:exported="false" />
+
+        <!-- HU-13: Control de Inventarios -->
+        <activity android:name=".hu13_inventarios.ControlInventarioActividad"
+            android:exported="false" />
+
+        <!-- HU-07: Alertas Normativas -->
+        <activity android:name=".hu07_alertas.AlertasNormativasActividad"
+            android:exported="false" />
+
+        <!-- HU-08: Inventario en Tiempo Real -->
+        <activity android:name=".hu08_inventario.InventarioTiempoRealActividad"
+            android:exported="false" />
+
+        <!-- HU-10: Trazabilidad de Operaciones -->
+        <activity android:name=".hu10_trazabilidad.TrazabilidadActividad"
+            android:exported="false" />
+
+        <!-- Precio de referencia (REGULADOR) y margen de estación -->
+        <activity android:name=".hu03_precios.PrecioReferenciaActividad"
+            android:exported="false" />
+
+        <activity android:name=".hu03_precios.MargenEstacionActividad"
+            android:exported="false" />
+
+        <!-- Venta con subsidio y factura (ESTACION/OPERADOR) -->
+        <activity android:name=".hu08_inventario.VentaActividad"
+            android:exported="false" />
+
+        <!-- Inventario y despacho del distribuidor -->
+        <activity android:name=".hu09_entregas.InventarioDistribuidorActividad"
+            android:exported="false" />
+
+        <!-- HU-11: Reportes Regulatorios -->
+        <activity android:name=".hu11_reportes.ReportesActividad"
+            android:exported="false" />
+
+        <!-- HU-14: USUARIO_PARTICULAR (perfil, selección de empresa, compra, historial) -->
+        <activity android:name=".hu14_usuario_particular.PerfilUsuarioActividad"
+            android:exported="false" />
+        <activity android:name=".hu14_usuario_particular.SeleccionarEmpresaActividad"
+            android:exported="false" />
+        <activity android:name=".hu14_usuario_particular.CompraActividad"
+            android:exported="false" />
+        <activity android:name=".hu14_usuario_particular.HistorialComprasActividad"
+            android:exported="false" />
+
+        <!-- HU-15: Saldo digital (Mi Saldo, Pagar a empleado, Saldos del sistema) -->
+        <activity android:name=".hu15_saldo.MiSaldoActividad"
+            android:exported="false" />
+        <activity android:name=".hu15_saldo.PagarEmpleadoActividad"
+            android:exported="false" />
+        <activity android:name=".hu15_saldo.SaldosSistemaActividad"
+            android:exported="false" />
+
+        <!-- HU-16: Lab Maps Intent (ubicación de estación + ruta del distribuidor
+             + estaciones cercanas para USUARIO_PARTICULAR) -->
+        <activity android:name=".hu16_mapas.UbicacionEstacionActividad"
+            android:exported="false" />
+        <activity android:name=".hu16_mapas.RutaDistribuidorActividad"
+            android:exported="false" />
+        <activity android:name=".hu16_mapas.EstacionesCercanasActividad"
+            android:exported="false" />
+
+        <!-- HU-17: Lab Retrofit (consumo de servicios REST hacia el servidor nacional) -->
+        <activity android:name=".hu17_red.BoletinesNormativosActividad"
+            android:exported="false" />
+
+        <!-- HU-18: Lab Started Services — notificaciones diferidas en background -->
+        <service
+            android:name=".hu18_servicios.NotificadorEventosServicio"
+            android:exported="false" />
+
+        <!-- HU-11: FileProvider para compartir reportes PDF/CSV -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

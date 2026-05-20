@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/secundario_oscuro"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🚚 Ruta del día"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/texto_sobre_primario" />
+
+        <TextView
+            android:id="@+id/textoOrigenRuta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/texto_sobre_primario"
+            android:alpha="0.85"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estaciones a visitar hoy"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/texto_primario"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/textoSinEstaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No hay estaciones con ubicación registrada. Pídeles que registren sus coordenadas desde su perfil."
+        android:textSize="13sp"
+        android:gravity="center"
+        android:padding="24dp"
+        android:textColor="@color/texto_secundario"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaEstacionesRuta"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:clipToPadding="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textoResumenRuta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0 paradas seleccionadas"
+            android:textSize="13sp"
+            android:textColor="@color/texto_secundario"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonIniciarRuta"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🗺️  Iniciar ruta en Google Maps"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/exito" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonVolverRuta"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/volver"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            style="@style/Widget.Material3.Button.TextButton" />
+    </LinearLayout>
+</LinearLayout>
