@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
+import com.estaciones.qestaciones.BuildConfig;
+
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -30,13 +32,14 @@ public class ServidorCorreo {
 
     private static final String TAG = "ServidorCorreo";
 
-    // CONFIGURACION SMTP - Cambiar estos valores por los reales
+    // CONFIGURACION SMTP - El correo y la contrasena se leen de local.properties
+    // (smtp.correo y smtp.contrasena) a traves de BuildConfig; nunca se escriben en el codigo.
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final String SMTP_PORT = "587";
-    private static final String CORREO_REMITENTE = "aj4373722@gmail.com";
+    private static final String CORREO_REMITENTE = BuildConfig.SMTP_CORREO;
     // Usar "Contrasena de aplicacion" de Google (16 caracteres)
     // Se genera en: Google Account > Seguridad > Verificacion en 2 pasos > Contrasenas de apps
-    private static final String CONTRASENA_APP = "gfgh ezoj xwza oezd";
+    private static final String CONTRASENA_APP = BuildConfig.SMTP_CONTRASENA;
 
     private final ExecutorService ejecutor = Executors.newSingleThreadExecutor();
     private final Handler handlerPrincipal = new Handler(Looper.getMainLooper());
@@ -94,7 +97,7 @@ public class ServidorCorreo {
      * Verifica si la configuracion SMTP esta lista para usarse.
      */
     public static boolean estaConfigurado() {
-        return !CONTRASENA_APP.contains("xxxx");
+        return !CORREO_REMITENTE.isEmpty() && !CONTRASENA_APP.isEmpty();
     }
 
     /**

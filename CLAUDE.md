@@ -74,7 +74,7 @@ The DB seeds a default admin (`admin` / `admin123`) on first run via `crearUsuar
 
 ### External integrations
 
-- **SMTP (real)** — `ServidorCorreo` uses Gmail credentials hardcoded at the top of the class (`aj4373722@gmail.com` + 16-char app password). Both `enviarCodigoVerificacion` (2FA) and `enviarFactura` (sales + purchases) go through this. When adding new outbound mail, reuse `enviarFactura`'s executor pattern — never block the UI thread on SMTP.
+- **SMTP (real)** — `ServidorCorreo` reads the Gmail sender and 16-char app password from `local.properties` (`smtp.correo`, `smtp.contrasena`) via `BuildConfig.SMTP_CORREO` / `BuildConfig.SMTP_CONTRASENA`. Never hardcode credentials in source. Both `enviarCodigoVerificacion` (2FA) and `enviarFactura` (sales + purchases) go through this. When adding new outbound mail, reuse `enviarFactura`'s executor pattern — never block the UI thread on SMTP.
 - **RUNT mock** — `ApiTransitoServicio` is a local mock returning fake vehicles, not a real HTTP call. No Retrofit or OkHttp in this project.
 - **File sharing (PDF/CSV reports)** — Uses a `FileProvider` with authority `${applicationId}.fileprovider`; paths defined in `res/xml/file_paths.xml`. Required permission `POST_NOTIFICATIONS` is already in the manifest (Android 13+).
 
