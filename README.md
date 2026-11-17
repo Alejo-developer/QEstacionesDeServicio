@@ -9,9 +9,22 @@ Proyecto académico de Ingeniería de Sistemas en la Universidad Piloto de Colom
 ![Room](https://img.shields.io/badge/Room-SQLite-blue)
 ![Retrofit](https://img.shields.io/badge/Retrofit-REST-48B983)
 
-<!-- Capturas: añade aquí imágenes de la app, por ejemplo:
-![Inicio de sesión](docs/login.png) ![Menú del administrador](docs/menu-admin.png)
--->
+## Capturas
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/capturas/login.png" width="200" alt="Inicio de sesión"><br><sub>Inicio de sesión</sub></td>
+    <td align="center"><img src="docs/capturas/menu-administrador.png" width="200" alt="Menú del administrador"><br><sub>Menú del administrador</sub></td>
+    <td align="center"><img src="docs/capturas/menu-estacion.png" width="200" alt="Menú de la estación"><br><sub>Menú de la estación</sub></td>
+    <td align="center"><img src="docs/capturas/reglas-precios.png" width="200" alt="Reglas de precios"><br><sub>Reglas de precios por zona</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/capturas/registrar-venta.png" width="200" alt="Registrar venta"><br><sub>Venta con validación de subsidio</sub></td>
+    <td align="center"><img src="docs/capturas/precio-venta.png" width="200" alt="Precio de venta"><br><sub>Margen sobre el precio de referencia</sub></td>
+    <td align="center"><img src="docs/capturas/inventario-distribuidor.png" width="200" alt="Inventario del distribuidor"><br><sub>Inventario del distribuidor</sub></td>
+    <td align="center"><img src="docs/capturas/ubicacion-gps.png" width="200" alt="Ubicación por GPS"><br><sub>Ubicación por GPS</sub></td>
+  </tr>
+</table>
 
 ## Roles
 
